@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Recruitment.DAL.Models.Company
 {
-    public class Department
+    public class Department(string name)
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; } = name;
     }
 }
