@@ -23,7 +23,15 @@ namespace Recruitment.DAL.Models.People
         public Role? Role { get; set; }
 
         private int calculatedSalary;
-        public int CalculatedSalary => calculatedSalary = (int)Math.Round(Position.BaseSalary * Role.SalaryMultiplier);
+        public int CalculatedSalary { 
+            get 
+            {
+                calculatedSalary = (Position == null) ? 0 : Position.BaseSalary;
+                calculatedSalary = (Role == null) ? 0 : (int)Math.Round(calculatedSalary * Role.SalaryMultiplier);
+
+                return calculatedSalary;
+            }
+        }
 
         public double PersonalSalaryMultiplier { get; private set; }
 
