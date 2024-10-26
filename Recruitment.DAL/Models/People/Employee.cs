@@ -4,8 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Recruitment.DAL.Models.Company;
 
-namespace Recruitment.DAL.Models
+namespace Recruitment.DAL.Models.People
 {
     [Table("Employees")]
     public class Employee : AbstractPerson
@@ -17,9 +18,9 @@ namespace Recruitment.DAL.Models
             PersonalSalaryMultiplier = 1.0;
         }
 
-        public Department Department { get; set; }
-        public Position Position { get; set; }
-        public Role Role { get; set; }
+        public Department? Department { get; set; }
+        public Position? Position { get; set; }
+        public Role? Role { get; set; }
 
         private int calculatedSalary;
         public int CalculatedSalary => calculatedSalary = (int)Math.Round(Position.BaseSalary * Role.SalaryMultiplier);
@@ -28,6 +29,6 @@ namespace Recruitment.DAL.Models
 
         private int finalSalary;
         public double FinalSalary => finalSalary = (int)Math.Round(calculatedSalary * PersonalSalaryMultiplier);
-        
+
     }
 }
