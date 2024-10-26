@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Recruitment.DAL.Models
+namespace Recruitment.DAL.Models.Company
 {
     public class Role
     {

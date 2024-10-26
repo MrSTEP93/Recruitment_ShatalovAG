@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Recruitment.DAL.Models
+namespace Recruitment.DAL.Models.Company
 {
-    public class Position
+    public class Position(string name)
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = name;
+
         public int BaseSalary { get; set; }
     }
 }

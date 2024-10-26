@@ -6,18 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Recruitment.DAL.Models
+namespace Recruitment.DAL.Models.People
 {
     public abstract class AbstractPerson
     {
-        protected AbstractPerson(string name, string email) : this (name, string.Empty, email, string.Empty) { }
+        protected AbstractPerson(string name, string email) : this(name, string.Empty, email, string.Empty) { }
 
         protected AbstractPerson(string name, string lastName, string email, string phoneNumber)
         {
             Name = name;
             LastName = lastName;
             Email = email;
-            PhoneNumber = phoneNumber;           
+            PhoneNumber = phoneNumber;
         }
 
         public string Name { get; set; }
