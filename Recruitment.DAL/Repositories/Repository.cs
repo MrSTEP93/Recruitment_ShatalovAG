@@ -37,12 +37,8 @@ namespace Recruitment.DAL.Repositories
 
         public async Task<T> Get(int id)
         {
-            return await Set.FindAsync(id);
-        }
-
-        public async Task<T> Get(string id)
-        {
-            return await Set.FindAsync(id);
+            var result = await Set.FindAsync(id);
+            return result ?? throw new NullReferenceException("No entries found");
         }
 
         public IEnumerable<T> GetAll()

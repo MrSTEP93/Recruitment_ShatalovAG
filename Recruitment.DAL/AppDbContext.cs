@@ -13,7 +13,7 @@ namespace Recruitment.DAL
 
         public DbSet<Vacancy> Vacancies { get; set; }
         public DbSet<VacancyStatus> VacancyStatuses { get; set; }
-        public DbSet<VanancyHistory> VanancyHistories { get; set; }
+        public DbSet<VacancyHistory> VanancyHistories { get; set; }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Candidate> Candidates { get; set; }
