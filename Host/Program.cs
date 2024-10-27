@@ -3,16 +3,14 @@ using Recruitment.DAL.Models.Recruitment;
 
 namespace Host
 {
+    /// <summary>
+    /// Делал тестовые миграции здесь, и пару других проверок
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            /*
-            Console.WriteLine("Creating context...");
-            using var db = new AppDbContext();
-            Console.WriteLine("Success");
-            */
 
         }
     }

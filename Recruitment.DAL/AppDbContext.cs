@@ -9,7 +9,7 @@ namespace Recruitment.DAL
     {
         public DbSet<Department> Departments { get; set; }
         public DbSet<Position> Positions { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        public DbSet<Grade> Roles { get; set; }
 
         public DbSet<Vacancy> Vacancies { get; set; }
         public DbSet<VacancyStatus> VacancyStatuses { get; set; }

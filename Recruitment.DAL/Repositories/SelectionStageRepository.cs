@@ -9,23 +9,25 @@ namespace Recruitment.DAL.Repositories
 {
     public class SelectionStageRepository(AppDbContext db) : Repository<SelectionStage>(db)
     {
-        public void AddStage(string name)
+        public async void AddStage(string name)
         {
-            AddStage(name, string.Empty);
+            await AddStage(name, string.Empty);
         }
 
-        public void AddStage(string name, string description)
+        public async Task AddStage(string name, string description)
         {
             SelectionStage stage = new(name)
             {
                 Description = description
             };
 
-            Create(stage);
+            await Create(stage);
         }
 
-        public void SetDescription(SelectionStage item, string newDescription)
+        public async Task SetDescription(SelectionStage item, string newDescription)
         {
+            item.Description = newDescription;
+            await Update(item);
         }
     }
 }

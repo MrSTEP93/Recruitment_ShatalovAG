@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Recruitment.DAL\Recruitment.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

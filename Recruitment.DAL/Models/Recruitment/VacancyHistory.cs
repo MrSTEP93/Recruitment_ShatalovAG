@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Recruitment.DAL.Models.Recruitment
 {
+    /// <summary>
+    /// Класс для записи истории вакансии (изменения статуса)
+    /// </summary>
     public class VacancyHistory
     {
         public int Id { get; set; }
