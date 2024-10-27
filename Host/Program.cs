@@ -1,4 +1,5 @@
 ﻿using Recruitment.DAL;
+using Recruitment.DAL.Models.Recruitment;
 
 namespace Host
 {
@@ -12,6 +13,7 @@ namespace Host
             using var db = new AppDbContext();
             Console.WriteLine("Success");
             */
+
         }
     }
 }

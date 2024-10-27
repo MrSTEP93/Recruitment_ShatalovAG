@@ -9,14 +9,14 @@ namespace Recruitment.DAL.Models.Recruitment
 {
     public class Vacancy(string name)
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = name;
-        public string Description { get; set; } = string.Empty;
+        public int Id { get; internal set; }
+        public string Name { get; internal set; } = name;
+        public string Description { get; internal set; } = string.Empty;
 
-        public Department? Department { get; set; }
-        public Position? Position { get; set; }
-        public Role? Role { get; set; }
+        public Department? Department { get; internal set; }
+        public Position? Position { get; internal set; }
+        public Role? Role { get; internal set; }
 
-        public int SuggestedSalary { get; set; }
+        public int SuggestedSalary { get; internal set; }
     }
 }
