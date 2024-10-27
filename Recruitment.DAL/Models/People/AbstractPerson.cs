@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Recruitment.DAL.Models.People
 {
+    /// <summary>
+    /// Абстрактный класс с описанием базовых полей для каждого человека
+    /// </summary>
     public abstract class AbstractPerson
     {
         protected AbstractPerson(string name, string email) : this(name, string.Empty, email, string.Empty) { }

@@ -8,6 +8,10 @@ using Recruitment.DAL;
 
 namespace Recruitment.DAL.Repositories
 {
+    /// <summary>
+    /// Repository for basic CRUD operations. Another repositories inherited from this.
+    /// </summary>
+    /// <typeparam name="T">Class of entity (model)</typeparam>
     public class Repository<T> : IRepository<T> where T : class
     {
         protected DbContext _db;
@@ -23,13 +27,13 @@ namespace Recruitment.DAL.Repositories
             Set = set;
         }
 
-        public async void Create(T item)
+        public async Task Create(T item)
         {
             await Set.AddAsync(item);
             await _db.SaveChangesAsync();
         }
 
-        public async void Delete(T item)
+        public async Task Delete(T item)
         {
             Set.Remove(item);
             await _db.SaveChangesAsync();
@@ -46,7 +50,7 @@ namespace Recruitment.DAL.Repositories
             return Set;
         }
 
-        public async void Update(T item)
+        public async Task Update(T item)
         {
             Set.Update(item);
             await _db.SaveChangesAsync();

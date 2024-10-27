@@ -41,7 +41,7 @@ namespace Recruitment.DAL.Repositories
             Update(vacancy);
         }
 
-        public void SetRole(Vacancy vacancy, Role role)
+        public void SetRole(Vacancy vacancy, Grade role)
         {
         }
 

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Recruitment.DAL.Models.Recruitment
 {
+    /// <summary>
+    /// Класс для записи истории общения с кандидатом
+    /// (когда в какую стадию перешел, комментарий об этом)
+    /// </summary>
     public class CandidateHistory()
     {
         public int Id { get; internal set; }
