@@ -8,7 +8,7 @@ namespace Recruitment.DAL.Models.Recruitment
 {
     /// <summary>
     /// Справочник стадий отбора каждого кандидата 
-    /// (например, скрининг, интервью, техническое задание, оффер)
+    /// (например: скрининг, интервью, техническое задание, оффер)
     /// </summary>
     /// <param name="name"></param>
     public class SelectionStage(string name)

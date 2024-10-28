@@ -16,13 +16,13 @@ namespace Recruitment.DAL.Repositories
             Add(name, description, 0);
         }
 
-        public void Add(string name, string description, int salary)
+        public async void Add(string name, string description, int salary)
         {
             Vacancy vacancy = new(name)
             {
                 Description = description,
             };
-            Create(vacancy);
+            await Create(vacancy);
 
             // в идеале, этот репо нужно получить из Dependecy Injection, но данный контейнер здесь не реализован
             var vacancyHistory = new VacancyHistoryRepository(db);
@@ -35,21 +35,21 @@ namespace Recruitment.DAL.Repositories
         {
         }
 
-        public void SetPosition(Vacancy vacancy, Position position)
+        public async void SetPosition(Vacancy vacancy, Position position)
         {
             vacancy.Position = position;
-            Update(vacancy);
+            await Update(vacancy);
         }
 
-        public void SetRole(Vacancy vacancy, Grade role)
+        public void SetLevel(Vacancy vacancy, Grade level)
         {
         }
 
-        public void SetSalary(Vacancy vacancy, int salary)
+        public async void SetSalary(Vacancy vacancy, int salary)
         {
             ArgumentOutOfRangeException.ThrowIfNegative(salary);
             vacancy.SuggestedSalary = salary;
-
+            await Update(vacancy);
         }
 
         public void SetDescription(Vacancy vacancy, string description)

@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Recruitment.DAL.Repositories
 {
+    /// <summary>
+    /// Репозиторий для работы с историей вакансии
+    /// </summary>
+    /// <param name="db">Контекст бд</param>
     public class VacancyHistoryRepository(AppDbContext db) : Repository<VacancyHistory>(db)
     {
         public void InitFirstRecord(Vacancy vacancy)
@@ -23,16 +27,16 @@ namespace Recruitment.DAL.Repositories
             {
                 status = vacancyStatusRepo.GetByName("создан").Result;
             }
-            AddNewRecord(vacancy, status, "Vacancy created");
+            AddNewItem(vacancy, status, "Vacancy created");
             
         }
 
-        public void AddNewRecord(Vacancy vacancy, VacancyStatus status)
+        public void AddNewItem(Vacancy vacancy, VacancyStatus status)
         {
-            AddNewRecord(vacancy, status, string.Empty);
+            AddNewItem(vacancy, status, string.Empty);
         }
 
-        public void AddNewRecord(Vacancy vacancy, VacancyStatus status, string comment)
+        public async void AddNewItem(Vacancy vacancy, VacancyStatus status, string comment)
         {
             var historyRecord = new VacancyHistory()
             {
@@ -41,17 +45,27 @@ namespace Recruitment.DAL.Repositories
                 Date = DateTime.Now,
                 Comment = comment
             };
-            Create(historyRecord);
+            await Create(historyRecord);
         }
 
-        public void SetComment(VacancyHistory item, string newComment)
+        public async void SetComment(VacancyHistory item, string newComment)
         {
             item.Comment = newComment;
-            Update(item);
+            await Update(item);
         }
 
         public void SetDate(VacancyHistory item, DateTime date) 
         {
+        }
+
+        public List<VacancyHistory> GetStoryOfVacancy(Vacancy vacancy)
+        {
+            return [];
+        }
+
+        public List<VacancyHistory> GetStoryOfVacancyId(int vacancyId)
+        {
+            return [];
         }
     }
 }

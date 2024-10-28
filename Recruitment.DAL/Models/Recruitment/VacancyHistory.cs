@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace Recruitment.DAL.Models.Recruitment
 {
     /// <summary>
-    /// Класс для записи истории вакансии (изменения статуса)
+    /// Класс для записи истории вакансии (изменения внутренного/служебного статуса)
     /// </summary>
     public class VacancyHistory
     {
         public int Id { get; set; }
-        public Vacancy Vanancy { get; internal set; }
-        public VacancyStatus Status { get; internal set; }
-        public DateTime Date { get; internal set; } = DateTime.Now;
+        public Vacancy? Vanancy { get; internal set; }
+        public VacancyStatus? Status { get; internal set; }
+        public DateTime? Date { get; internal set; } = DateTime.Now;
         public string Comment { get; internal set; } = string.Empty;
     }
 }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Recruitment.DAL.Models.Recruitment
 {
     /// <summary>
-    /// Справочник статусов вакансии 
-    /// (например, создана, отменена, закрыта)
+    /// Справочник внутренних/служебных статусов вакансии 
+    /// (например: создана, отменена, закрыта)
     /// </summary>
     /// <param name="name"></param>
     public class VacancyStatus(string name)

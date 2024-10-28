@@ -25,12 +25,12 @@ namespace Recruitment.DAL.Repositories
             return result ?? throw new NullReferenceException("Items not found");
         }
 
-        public void AddRecord(Candidate candidate, SelectionStage stage)
+        public void AddItem(Candidate candidate, SelectionStage stage)
         {
-            AddRecord(candidate, stage, string.Empty);
+            AddItem(candidate, stage, string.Empty);
         }
 
-        public void AddRecord(Candidate candidate, SelectionStage stage, string comment)
+        public async void AddItem(Candidate candidate, SelectionStage stage, string comment)
         {
             CandidateHistory item = new()
             {
@@ -39,7 +39,7 @@ namespace Recruitment.DAL.Repositories
                 StartDate = DateTime.Now,
                 Comment = comment
             };
-            Create(item);
+            await Create(item);
         }
 
         public void SetComment(CandidateHistory item, string newComment)
