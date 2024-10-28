@@ -9,6 +9,9 @@ namespace Recruitment.DAL.Models.Recruitment
 {
     /// <summary>
     /// Класс с описанием вакансии
+    /// 
+    /// Здесь решил применить internal setter, чтобы ограничить возможность редактирования полей извне.
+    /// Получается, весь функционал по редактированию полей лежит внутри сборки, в VacancyRepository.
     /// </summary>
     /// <param name="name">Название вакансии</param>
     public class Vacancy(string name)

@@ -34,6 +34,7 @@ namespace Recruitment.DAL
             Database.EnsureCreated();
         }
 
+        // вынужденно захардкодил строку подключения ((
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server = (localdb)\\MSSQLLocalDB; Database = Recruitment; Trusted_Connection = True");

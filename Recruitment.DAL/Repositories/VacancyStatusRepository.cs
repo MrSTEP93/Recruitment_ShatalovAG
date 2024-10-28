@@ -22,10 +22,10 @@ namespace Recruitment.DAL.Repositories
             }
         }
 
-        public void SetDescription(VacancyStatus item, string description)
+        public async void SetDescription(VacancyStatus item, string description)
         {
             item.Description = description;
-            Update(item);
+            await Update(item);
         }
     }
 }

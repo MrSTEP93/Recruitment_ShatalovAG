@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Recruitment.DAL.Models.Company
 {
     /// <summary>
-    /// Описание должностей в отделе
+    /// Должность внутри отдела
     /// </summary>
     /// <param name="name">Название должности</param>
     public class Position(string name)

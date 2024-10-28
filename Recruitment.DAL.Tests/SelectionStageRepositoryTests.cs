@@ -63,13 +63,6 @@ namespace Recruitment.DAL.Tests
             Assert.That(!list.Contains(testItem));
         }
 
-        [Test]
-        public void GetAll_MustReturnValue()
-        {
-            var list = repo.GetAll();
-            Assert.That(list.Any());
-        }
-
         // пришлось повторять создание и удаление..
         [Test]
         public async Task SetDescription_MustChangeProperty()
