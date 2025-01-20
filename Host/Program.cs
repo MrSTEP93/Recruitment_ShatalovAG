@@ -11,7 +11,7 @@ namespace Host
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            string mes = "azaza, we have 5 libs. Or no...";
+            string mes = "No more libs";
         }
     }
 }
